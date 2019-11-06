@@ -1,0 +1,30 @@
+{
+  "name": "my-next-app",
+  "version": "0.1.0",
+  "description": "Next.js app",
+  "private": true,
+  "scripts": {
+    "link": "npm ln ../my-comp ../my-lib",
+    "analyze": "ANALYZE=bundle next dev",
+    "start": "next dev"
+  },
+  "peerDependencies": {
+    "my-comp": "1.0.0",
+    "my-lib": "1.0.0"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^9.1.2",
+    "next": "9.1.2",
+    "next-transpile-modules": "^2.3.1",
+    "react": "^16.11.0",
+    "react-dom": "16.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0"
+  }
+}
