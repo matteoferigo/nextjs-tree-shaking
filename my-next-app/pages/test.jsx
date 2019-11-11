@@ -1,6 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import { Counter } from 'my-comp'
+// import { Useless } from 'my-comp'
+import Welcome from '../components/Welcome'
 
 const Home = () => (
   <>
@@ -8,7 +10,7 @@ const Home = () => (
       <title>React hooks test</title>
     </Head>
 
-    <h1>React app</h1>
+    <Welcome />
     <Counter />
   </>
 )

@@ -29,7 +29,7 @@
     "no-unused-vars": "off",
     "semi": ["error", "never"],
     "react/prop-types": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "off"

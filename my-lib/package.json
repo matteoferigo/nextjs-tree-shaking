@@ -2,21 +2,16 @@
   "name": "my-lib",
   "version": "1.0.0",
   "description": "React hooks",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "types": "src/index.ts",
   "sideEffects": false,
   "scripts": {
     "link": "npm ln ../my-next-app/node_modules/react",
-    "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "rimraf dist/cjs && babel src -d dist/cjs --extensions '.ts'",
-    "build:esm": "rimraf dist/esm && ESM=es6 babel src -d dist/esm --extensions '.ts'",
-    "build:watch": "npm run build:esm -- -w",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
     "test": "jest",
     "test:watch": "npm t -- --watch"
-  },
-  "peerDependencies": {
-    "react": "16.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -34,6 +29,8 @@
     "eslint-plugin-react-hooks": "^2.2.0",
     "jest": "^24.9.0",
     "rimraf": "^3.0.0",
+    "rollup": "^1.26.5",
+    "rollup-plugin-typescript": "^1.0.1",
     "typescript": "^3.6.4"
   },
   "dependencies": {}
