@@ -38,7 +38,7 @@ Counter component is imported by `my-next-app/pages/index.ts` component, so it s
 Useless is part of dead-code, and shouldn't be inside the final bundle.
 
 
-### Bundle analyze
+### Bundle analyze
 
 Let's check if tree-shaking works.
 Execute `npm run analyze` to run `@next/bundle-analyzer`
