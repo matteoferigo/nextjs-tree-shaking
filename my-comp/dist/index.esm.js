@@ -1,5 +1,6 @@
-import { createElement, Fragment, useState } from 'react';
+import { createElement, Fragment } from 'react';
 import { useCounter } from 'my-lib';
+import { fake } from 'faker';
 
 function Counter() {
     var _a = useCounter(0), count = _a[0], increaseValue = _a[1];
@@ -11,11 +12,11 @@ function Counter() {
 }
 
 function Useless() {
-    var value = useState('useless')[0];
     return (createElement("div", null,
         createElement("h2", null, "Useless component"),
-        createElement("p", null, "Tree shaking test"),
-        createElement("button", { type: "button" }, value)));
+        createElement("p", null,
+            "My name is:",
+            createElement("span", null, fake('{{name.lastName}}')))));
 }
 
 export { Counter, Useless };

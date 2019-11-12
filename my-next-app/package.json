@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "link": "npm ln ../my-comp ../my-lib",
-    "analyze": "ANALYZE=bundle next dev",
+    "analyze": "ANALYZE=bundle next build",
     "start": "next dev"
   },
   "peerDependencies": {

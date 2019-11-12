@@ -1,13 +1,14 @@
 import * as React from 'react'
+import { fake } from 'faker'
 
 function Useless() {
-  const [value] = React.useState('useless')
-
   return (
     <div>
       <h2>Useless component</h2>
-      <p>Tree shaking test</p>
-      <button type="button">{value}</button>
+      <p>
+        My name is:
+        <span>{fake('{{name.lastName}}')}</span>
+      </p>
     </div>
   )
 }

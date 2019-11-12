@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import { Counter } from 'my-comp'
-// import { Useless } from 'my-comp'
+import { Counter } from 'my-comp' // TRY tree shake
+// import Counter from 'my-comp/dist/lib/Counter' // TRY relative import
 import Welcome from '../components/Welcome'
 
 const Home = () => (

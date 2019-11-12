@@ -7,15 +7,20 @@
   "types": "src/index.ts",
   "sideEffects": false,
   "scripts": {
-    "link": "npm ln ../my-lib ../my-next-app/node_modules/react",
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "link": "npm ln ../my-lib ../my-next-app/node_modules/react ../my-next-app/node_modules/react-dom",
+    "build": "rimraf dist/lib && rollup -c",
+    "dev": "rimraf dist/lib && rollup -c -w",
     "test": "jest",
     "test:watch": "npm t -- --watch"
   },
+  "peerDependencies": {
+    "my-lib": "1.0.0",
+    "react": "^16.11.0",
+    "react-dom": "16.11.0"
+  },
   "dependencies": {
-    "next": "^9.1.2",
-    "react-dom": "^16.11.0"
+    "faker": "^4.1.0",
+    "next": "^9.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -23,6 +28,8 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
+    "@rollup/plugin-json": "^4.0.0",
+    "@types/faker": "^4.1.7",
     "@types/react": "^16.9.11",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
