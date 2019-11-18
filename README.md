@@ -15,17 +15,26 @@ Project is organized in this way:
 
 Flag `sideEffects` is set in both `my-comp` and `my-lib` package.json
 
-
-#### Issue description
-
 The `my-comp` library exposes two components: `Counter` and `Useless`.
 Counter component is imported by `my-next-app/pages/index` container.
 Useless components is imported in `my-next-app/pages/heavy` container, and uses `faker` dependency (which is quite heavy).
 
 
+#### Issue description
+
+The `heavy` chunk should be the bulky one, but whenever I import the `Counter` component with the square-method, the bulky chunk becames `_app`
+
+| Counter | Useless | Bulky chunk |
+| ------- | ------- | ----------- |
+|  `{ }`  |  `{ }`  | `_app`      |
+|  `{ }`  |  `/./`  | `_app`      |
+|  `/./`  |  `{ }`  | `heavy`     |
+|  `/./`  |  `/./`  | `heavy`     |
+
+
 #### Expected behaviour
 
-Using tree shaking, I shouldn't see `faker` dependency in `pages/index` bundled file, but I should see it in `pages/heavy` (where `Useless` is used).
+Using tree shaking, I shouldn't see `faker` dependency in `pages/index`, but I should see it in `pages/heavy` (where `Useless` is used).
 
 This works perfectly with relative import ```import Useless from 'my-comp/dist/lib/Useless'```
 ```
