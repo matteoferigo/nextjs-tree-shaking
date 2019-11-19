@@ -10,19 +10,14 @@ module.exports = [{
     typescript(),
     autoExternal(),
   ],
-  output: [
-    { file: 'dist/index.cjs.js', format: 'cjs' },
-    { file: 'dist/index.esm.js', format: 'es' },
-  ],
+  output: { file: 'dist/index.cjs.js', format: 'cjs' },
 }, {
-  input: {
-    Counter: 'src/Counter/index.tsx',
-    Useless: 'src/Useless/index.tsx',
-  },
+  input: 'src/index.ts',
+  preserveModules: true,
   plugins: [
     json(),
     typescript(),
     autoExternal(),
   ],
-  output: { dir: 'dist/lib', format: 'cjs' },
+  output: { dir: 'dist/lib', format: 'es' },
 }]

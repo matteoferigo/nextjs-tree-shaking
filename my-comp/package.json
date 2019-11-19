@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React components",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/lib/index.js",
   "types": "src/index.ts",
   "sideEffects": false,
   "scripts": {
@@ -45,6 +45,8 @@
     "rimraf": "^3.0.0",
     "rollup": "^1.26.5",
     "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
     "typescript": "^3.6.4"
   }
